@@ -15,20 +15,20 @@ const PostDetails = () => {
         fetch(url)
         .then(res=>res.json())
         .then(data=>setPostDetails(data))
-    },[])
+    },[id])
   
     useEffect(()=>{
         const url=`https://jsonplaceholder.typicode.com/photos?albumId=${id}`
         fetch(url)
         .then(res=>res.json())
         .then(data=>setImages(data))
-    },[])
+    },[id])
     useEffect(()=>{
         const url=`https://jsonplaceholder.typicode.com/comments?postId=${id}`
         fetch(url)
         .then(res=>res.json())
         .then(data=>setComments(data))
-    },[])
+    },[id])
     return (
         <div>
             <h3><code>here you will be know about user details {id}</code></h3>
